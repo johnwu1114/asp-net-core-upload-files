@@ -1,5 +1,5 @@
-This repository is sample code for ASP.NET Core.
-Use the Visual Studio 2017 to development.
+This repository is sample code for ASP.NET Core.  
+Use the Visual Studio 2017 to development.  
 
 # ASP.NET Core 教學 - 檔案上傳
 
@@ -7,7 +7,7 @@ Use the Visual Studio 2017 to development.
 本篇將介紹如何在 ASP.NET Core 檔案上傳。  
 
 Blog：  
-[SP.NET Core 教學 - 檔案上傳](https://blog.johnwu.cc/article/asp-net-core-upload-files.html)
+[ASP.NET Core 教學 - 檔案上傳](https://blog.johnwu.cc/article/asp-net-core-upload-files.html)
 
 開發工具：  
 Visual Studio 2017 (可使用其他版，只要有支援 ASP.NET Core 開發就可以。)
