@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyWebsite.Filters;
 using MyWebsite.Models;
 
 namespace MyWebsite.Controllers
@@ -51,6 +52,22 @@ namespace MyWebsite.Controllers
                 photoCount = model.Photos.Count,
                 photoSize = model.Photos.Sum(f => f.Length)
             });
+        }
+
+        [Route("large")]
+        [HttpPost]
+        [DisableFormValueModelBinding]
+        public async Task<IActionResult> Large()
+        {
+            var fileCount = 0;
+
+            await Request.StreamFile((file) =>
+            {
+                fileCount++;
+                return System.IO.File.Create($"{_uploadFolder}\\{file.FileName}");
+            });
+
+            return Ok(new { fileCount = fileCount });
         }
     }
 }

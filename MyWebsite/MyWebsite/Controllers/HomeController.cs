@@ -13,5 +13,10 @@ namespace MyWebsite.Controllers
         {
             return View();
         }
+
+        public IActionResult Large()
+        {
+            return View();
+        }
     }
 }
