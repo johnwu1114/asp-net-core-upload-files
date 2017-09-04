@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyWebsite.Models;
 
 namespace MyWebsite.Controllers
 {
@@ -35,6 +36,21 @@ namespace MyWebsite.Controllers
             }
 
             return Ok(new { count = files.Count, size });
+        }
+
+        [Route("album")]
+        [HttpPost]
+        public async Task<IActionResult> Album(AlbumModel model)
+        {
+            // ...
+
+            return Ok(new
+            {
+                title = model.Title,
+                date = model.Date.ToString("yyyy/MM/dd"),
+                photoCount = model.Photos.Count,
+                photoSize = model.Photos.Sum(f => f.Length)
+            });
         }
     }
 }

@@ -21,7 +21,8 @@ namespace MyWebsite
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}"
+                    template: "{action=Index}/{id?}",
+                    defaults: new { controller = "Home" }
                 );
             });
         }

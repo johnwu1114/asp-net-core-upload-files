@@ -8,5 +8,10 @@ namespace MyWebsite.Controllers
         {
             return View();
         }
+
+        public IActionResult Album()
+        {
+            return View();
+        }
     }
 }
